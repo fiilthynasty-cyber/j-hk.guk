@@ -41,11 +41,22 @@ VITE_REQUEST_TIMEOUT_MS=8000
 - Envelopes like `{ data: ... }` and `{ result: ... }`.
 - Non-JSON responses are displayed as text.
 
+## Troubleshooting `package.json` parse errors (Vercel)
+
+If deploy logs show JSON parse errors like `Expected ',' or '}' after property value`, validate locally before deploy:
+
+```bash
+npm run validate:package
+```
+
+This checks `package.json` syntax exactly as JSON and fails fast if commas/braces are invalid.
+
 ## Pre-launch checklist
 
 - Confirm `VITE_DASHBOARD_PATH` matches your backend route exactly.
 - In direct mode, confirm backend CORS allows your frontend origin.
 - Validate timeout value (`VITE_REQUEST_TIMEOUT_MS`) for your environment.
+- Validate package syntax with `npm run validate:package`.
 - Run lint and build before deployment.
 
 ## Scripts
@@ -55,4 +66,5 @@ npm run dev
 npm run lint
 npm run build
 npm run preview
+npm run validate:package
 ```
