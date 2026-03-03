@@ -1,7 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-body {
-  @apply bg-darkbg text-white;
+/* src/index.css */
+@layer utilities {
+  .bg-darkbg {
+    background-color: #333; /* Your desired color */
+  }
 }
